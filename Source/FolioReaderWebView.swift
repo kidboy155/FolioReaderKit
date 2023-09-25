@@ -48,6 +48,7 @@ open class FolioReaderWebView: WKWebView {
         } else {
             // Fallback on earlier versions
         }
+        configuration.defaultWebpagePreferences.allowsContentJavaScript = true
         super.init(frame: frame, configuration: configuration)
         FolioReaderScript.cssInjection.addIfNeeded(to: self)
         FolioReaderScript.bridgeJS.addIfNeeded(to: self)

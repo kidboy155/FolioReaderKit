@@ -145,10 +145,7 @@ open class FolioReaderPage: UICollectionViewCell, WKNavigationDelegate, UIGestur
         let tempHtmlContent = htmlContentWithInsertHighlights(htmlContent)
         // Load the html into the webview
         webView?.alpha = 0
-        let headerString = "<meta name=\"viewport\" content=\"initial-scale=1.0\" />"
-        let documentDirUrl = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-        webView?.loadFileURL(baseURL, allowingReadAccessTo: documentDirUrl)
-        webView?.loadHTMLString(headerString + tempHtmlContent, baseURL: baseURL)
+        webView?.loadHTMLString(tempHtmlContent, baseURL: baseURL)
     }
 
     // MARK: - Highlights
